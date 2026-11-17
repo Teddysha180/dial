@@ -17,6 +17,7 @@
     document.getElementById("num").textContent = full;
     document.getElementById("call").href = "tel:" + full;
     location.href = "tel:" + full;
+    setTimeout(function () { window.close(); }, 1500);
   }
 </script>
 </body>
