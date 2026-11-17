@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dial</title>
+</head>
+<body style="font-family:sans-serif;text-align:center;margin-top:60px">
+<h2 id="num"></h2>
+<p><a id="call" style="font-size:22px">📞 Call</a></p>
+<p style="color:#777">If nothing happens, copy the number above.</p>
+<script>
+  var n = new URLSearchParams(location.search).get("n") || "";
+  n = n.replace(/\D/g, "").slice(-9);
+  if (n) {
+    var full = "+251" + n;
+    document.getElementById("num").textContent = full;
+    document.getElementById("call").href = "tel:" + full;
+    location.href = "tel:" + full;
+  }
+</script>
+</body>
+</html>
